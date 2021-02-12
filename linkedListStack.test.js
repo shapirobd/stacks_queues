@@ -1,9 +1,9 @@
-const Stack = require("./stack");
+const LinkedListStack = require("./linkedListStack");
 
 let stack;
 
 beforeEach(function () {
-	stack = new Stack();
+	stack = new LinkedListStack();
 });
 
 describe("push", function () {

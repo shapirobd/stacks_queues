@@ -1,9 +1,9 @@
-const Queue = require("./queue");
+const ArrayQueue = require("./arrayQueue");
 
 let queue;
 
 beforeEach(function () {
-	queue = new Queue();
+	queue = new ArrayQueue();
 });
 
 describe("enqueue", function () {

@@ -1,9 +1,9 @@
-const Queue = require("./queue");
+const LinkedListQueue = require("./linkedListQueue");
 
 let queue;
 
 beforeEach(function () {
-	queue = new Queue();
+	queue = new LinkedListQueue();
 });
 
 describe("enqueue", function () {

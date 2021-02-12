@@ -1,9 +1,9 @@
-const Stack = require("./stack");
+const ArrayStack = require("./arrayStack");
 
 let stack;
 
 beforeEach(function () {
-	stack = new Stack();
+	stack = new ArrayStack();
 });
 
 describe("push", function () {
