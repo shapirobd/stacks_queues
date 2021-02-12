@@ -27,6 +27,28 @@ class DoublyLinkedList {
 		this.length--;
 		return oldTail.val;
 	}
+
+	unshift(val) {
+		const newNode = new DoublyNode(val);
+		if (this.head) {
+			this.head.prev = newNode;
+			newNode.next = this.head;
+		} else {
+			this.tail = newNode;
+		}
+		this.head = newNode;
+		this.length++;
+	}
+
+	shift() {
+		const oldHead = this.head;
+		const newHead = this.head.next;
+		this.head.next = null;
+		newHead.prev = null;
+		this.head = newHead;
+		this.length--;
+		return oldHead.val;
+	}
 }
 
 module.exports = DoublyLinkedList;
