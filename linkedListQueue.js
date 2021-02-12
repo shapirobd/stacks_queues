@@ -1,40 +1,10 @@
-/** Node: node for a queue. */
-
-class Node {
-	constructor(val) {
-		this.val = val;
-		this.next = null;
-	}
-}
-
-class LinkedList {
-	constructor() {
-		this.head = null;
-		this.tail = null;
-		this.length = 0;
-	}
-
-	push(val) {
-		const newNode = new Node(val);
-		this.tail ? (this.tail.next = newNode) : (this.head = newNode);
-		this.tail = newNode;
-		this.length++;
-	}
-
-	shift() {
-		const oldHead = this.head;
-		const newHead = this.head.next;
-		this.head.next = null;
-		this.head = newHead;
-		this.length--;
-		return oldHead.val;
-	}
-}
+const LinkedList = require("./linkedList.js");
+const Node = require("./node.js");
 
 /** Queue: chained-together nodes where you can
  *  remove from the front or add to the back. */
 
-class Queue {
+class LinkedListQueue {
 	constructor() {
 		this.first = null;
 		this.last = null;
@@ -53,10 +23,6 @@ class Queue {
 	enqueue(val) {
 		this._list.push(val);
 		this.updateData();
-		// const newNode = new Node(val);
-		// this.last ? (this.last.next = newNode) : (this.first = newNode);
-		// this.last = newNode;
-		// this.size++;
 	}
 
 	/** dequeue(): remove the node from the start of the queue
@@ -69,12 +35,6 @@ class Queue {
 		const val = this._list.shift();
 		this.updateData();
 		return val;
-		// const oldFirst = this.first;
-		// const newFirst = this.first.next;
-		// this.first.next = null;
-		// this.first = newFirst;
-		// this.size--;
-		// return oldFirst.val;
 	}
 
 	/** peek(): return the value of the first node in the queue. */
@@ -90,4 +50,4 @@ class Queue {
 	}
 }
 
-module.exports = Queue;
+module.exports = LinkedListQueue;
